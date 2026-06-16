@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (logoutLink) logoutLink.classList.remove('hidden');
         
         if (userGreeting) {
-            userGreeting.textContent = `Hi, ${currentUser}`;
+            userGreeting.textContent = `${currentUser}`;
             userGreeting.classList.remove('hidden');
         }
     }
@@ -36,20 +36,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Save credentials to local storage
+            // Save credentials to local storage for future logins
             localStorage.setItem('ak_sounds_user_email', email);
             localStorage.setItem('ak_sounds_user_password', password);
             localStorage.setItem('ak_sounds_user_name', username);
 
-            // CHANGED: Do NOT set 'ak_sounds_current_user' here anymore.
-            // CHANGED: Route them to the login page instead of the homepage.
-            window.location.href = 'login.html';
+            // Log them in instantly by setting the active session
+            localStorage.setItem('ak_sounds_current_user', username);
+
+            // Send them straight to the homepage
+            window.location.href = 'index.html';
         });
     }
 
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
+        loginForm.addEventListener('submit', (e) => { 
             e.preventDefault(); 
 
             const email = document.getElementById('email').value;
@@ -62,11 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Check if what they typed matches what we have saved
             if (email === storedEmail && password === storedPassword) {
-                // Success! Log them in and send to homepage
+                // Log them in and send to homepage
                 localStorage.setItem('ak_sounds_current_user', storedUsername);
                 window.location.href = 'index.html';
             } else {
-                // Failure
                 alert('Invalid email or password. Please try again.');
             }
         });

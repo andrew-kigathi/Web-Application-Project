@@ -8,25 +8,27 @@
 </head>
 <body>
 
+    <!-- Top Navigation -->
     <nav class="top-nav">
         <div class="nav-left">
+            <a href="index.html">Home</a>
             <a href="faq.html">FAQs</a>
             <a href="feedback.html">Feedback</a>
         </div>
-        
         <div class="nav-right">
             <span id="user-greeting" class="user-greeting hidden"></span>
-            
             <a href="login.html" id="login-link">Login</a>
             <a href="register.html" id="register-link">Register</a>
             <a href="logout.html" id="logout-link" class="hidden">Logout</a>
         </div>
     </nav>
 
+    <!-- Register Form Container -->
     <div class="form-wrapper">
         <div class="form-card">
             <h2>Create an Account</h2>
-            <form action="#" method="POST">
+            <!-- THE FIX IS HERE: Added id="register-form" -->
+            <form id="register-form">
                 
                 <div class="input-group">
                     <label for="username">Username</label>
@@ -52,6 +54,7 @@
         </div>
     </div>
 
+    <!-- Links to your external JavaScript file -->
     <script src="js/index.js"></script>
 </body>
 </html>
