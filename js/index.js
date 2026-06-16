@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginLink = document.getElementById('login-link');
     const registerLink = document.getElementById('register-link');
     const logoutLink = document.getElementById('logout-link');
-    const userGreeting = document.getElementById('user-greeting'); // The new username text
+    const userGreeting = document.getElementById('user-greeting'); 
 
-    // Check if a user is currently logged in by looking in the browser's storage
+    // Check if a user is currently logged in
     const currentUser = localStorage.getItem('ak_sounds_current_user');
 
     if (currentUser) {
@@ -20,20 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Handles the logout process when the user clicks the logout link
+    // Handle the Logout Button
     if (logoutLink) {
         logoutLink.addEventListener('click', () => {
-            // Remove the user from the "logged in" state
             localStorage.removeItem('ak_sounds_current_user');
-            // The HTML link will automatically take them to logout.html
         });
     }
 
-    // Handles the registration form submission
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stops the page from refreshing
+            e.preventDefault(); 
             
             const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
@@ -44,35 +41,32 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem('ak_sounds_user_password', password);
             localStorage.setItem('ak_sounds_user_name', username);
 
-            // Automatically log them in after registering
-            localStorage.setItem('ak_sounds_current_user', username);
-
-            // Send them back to the homepage
-            window.location.href = 'index.html';
+            // CHANGED: Do NOT set 'ak_sounds_current_user' here anymore.
+            // CHANGED: Route them to the login page instead of the homepage.
+            window.location.href = 'login.html';
         });
     }
 
-    // Handles the login form submission
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stops the page from refreshing
+            e.preventDefault(); 
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Retrieve the saved "database" info
+            // Retrieve the saved info
             const storedEmail = localStorage.getItem('ak_sounds_user_email');
             const storedPassword = localStorage.getItem('ak_sounds_user_password');
             const storedUsername = localStorage.getItem('ak_sounds_user_name');
 
             // Check if what they typed matches what we have saved
             if (email === storedEmail && password === storedPassword) {
-                // Success! Log them in.
+                // Success! Log them in and send to homepage
                 localStorage.setItem('ak_sounds_current_user', storedUsername);
                 window.location.href = 'index.html';
             } else {
-                // Failure.
+                // Failure
                 alert('Invalid email or password. Please try again.');
             }
         });
