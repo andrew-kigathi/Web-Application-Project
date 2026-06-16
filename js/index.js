@@ -22,30 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handle the Logout Button
     if (logoutLink) {
-        logoutLink.addEventListener('click', () => {
-            localStorage.removeItem('ak_sounds_current_user');
-        });
-    }
+        logoutLink.addEventListener('click', (e) => {
+            // 1. Prevent the link from navigating immediately
+            e.preventDefault();
 
-    const registerForm = document.getElementById('register-form');
-    if (registerForm) {
-        registerForm.addEventListener('submit', (e) => {
-            e.preventDefault(); 
-            
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            // 2. Show the confirmation box
+            const confirmed = window.confirm("Are you sure you want to log out?");
 
-            // Save credentials to local storage for future logins
-            localStorage.setItem('ak_sounds_user_email', email);
-            localStorage.setItem('ak_sounds_user_password', password);
-            localStorage.setItem('ak_sounds_user_name', username);
-
-            // Log them in instantly by setting the active session
-            localStorage.setItem('ak_sounds_current_user', username);
-
-            // Send them straight to the homepage
-            window.location.href = 'index.html';
+            // 3. If the user clicks "OK", proceed with logout
+            if (confirmed) {
+                localStorage.removeItem('ak_sounds_current_user');
+                // 4. Manually redirect to the logout/home page
+                window.location.href = 'logout.html'; 
+            }
+            // If they click "Cancel", the code stops here and nothing happens
         });
     }
 
