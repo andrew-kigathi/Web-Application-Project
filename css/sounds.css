@@ -1,0 +1,22 @@
+/* =========================================
+    SOUNDS HUB PAGE STYLING
+   ========================================= */
+
+.hero-section {
+    text-align: center;
+    margin-top: 120px; 
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.hero-section p {
+    color: #a3a3a3;
+    font-size: 1.1rem;
+    margin: 0;
+}
