@@ -1,8 +1,15 @@
 /* Base Dark Theme Setup */
+/* Base Dark Theme Setup with Background Image */
 body {
     margin: 0;
     padding: 0;
     background-color: #080808;
+    background-image: linear-gradient(rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 0.5)), url('../images/home-page-background.jpg');
+    background-size: cover; /* Ensures the image stretches to cover the whole screen */
+    background-position: center; /* Keeps the most important part of the image in the middle */
+    background-repeat: no-repeat; /* Prevents the image from tiling like a mosaic */
+    background-attachment: fixed; /* Keeps the background still while the user scrolls */
+
     color: #ffffff;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     display: flex;
@@ -12,7 +19,6 @@ body {
     min-height: 100vh;
     position: relative; /* Gives the absolute nav a solid benchmark */
 }
-
 .top-nav {
     position: absolute;
     top: 0;

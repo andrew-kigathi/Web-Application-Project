@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (logoutLink) logoutLink.classList.remove('hidden');
         
         if (userGreeting) {
-            userGreeting.textContent = `${currentUser}`;
+            userGreeting.textContent = `Welcome back ${currentUser}`;
             userGreeting.classList.remove('hidden');
         }
     }
