@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Loops - AK SOUNDS</title>
+    <link rel="icon" type="image/png" href="images/project-icon.png">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/meldoy.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="sounds.html">Categories</a> <!-- Link back to the 3 choices -->
+            <a href="faq.html">FAQs</a>
+        </div>
+        <div class="nav-right">
+            <span id="user-greeting" class="user-greeting hidden"></span>
+            <a href="login.html" id="login-link">Login</a>
+            <a href="register.html" id="register-link">Register</a>
+            <a href="logout.html" id="logout-link" class="hidden">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Search Bar Section -->
+    <div class="search-wrapper">
+        <input type="text" id="sound-search" placeholder="Search by name, genre, or BPM...">
+    </div>
+
+    <!-- Tracklist Container -->
+    <div class="tracklist-wrapper" id="tracklist">
+        
+        <!-- Track Item 1 -->
+        <div class="track-item">
+            <div class="track-left">
+                <button class="icon-btn"><img src="images/play-icon.png" alt="Play"></button>
+                <div class="track-info">
+                    <h4 class="track-title">Lo-Fi Piano Chords</h4>
+                    <p>Keys • 85 BPM • G Major</p>
+                </div>
+            </div>
+            <div class="track-right">
+                <button class="icon-btn"><img src="images/download-icon.png" alt="Download"></button>
+            </div>
+        </div>
+
+        <!-- Track Item 2 -->
+        <div class="track-item">
+            <div class="track-left">
+                <button class="icon-btn"><img src="images/play-icon.png" alt="Play"></button>
+                <div class="track-info">
+                    <h4 class="track-title">Hyperpop Synth Pluck</h4>
+                    <p>Synth • 145 BPM • C# Minor</p>
+                </div>
+            </div>
+            <div class="track-right">
+                <button class="icon-btn"><img src="images/download-icon.png" alt="Download"></button>
+            </div>
+        </div>
+
+        <!-- Track Item 3 -->
+        <div class="track-item">
+            <div class="track-left">
+                <button class="icon-btn"><img src="images/play-icon.png" alt="Play"></button>
+                <div class="track-info">
+                    <h4 class="track-title">Dark Vintage Guitar Loop</h4>
+                    <p>Guitar • 120 BPM • E Minor</p>
+                </div>
+            </div>
+            <div class="track-right">
+                <button class="icon-btn"><img src="images/download-icon.png" alt="Download"></button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/tracks.js"></script>
+</body>
+</html>
