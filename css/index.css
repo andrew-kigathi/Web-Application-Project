@@ -1,14 +1,12 @@
-/* =========================================
-    HOME PAGE SPECIFIC STYLING
-   ========================================= */
+/* HOME PAGE SPECIFIC STYLING */
 
 /* Overrides the general body to add the custom background image */
 body {
     background-image: linear-gradient(rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 0.5)), url('../images/home-page-background.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .home-section {
