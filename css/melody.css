@@ -1,0 +1,140 @@
+body {
+    background-image: url('../images/melody-background.jpg');
+    background-size: cover;          /* Makes the image fill the screen */
+    background-position: center;     /* Keeps the focus of the image centered */
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /* Keeps the image static while you scroll */
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* The 0.7 makes it 70% dark */
+    z-index: -1; /* Keeps the overlay behind the content */
+}
+.library-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Differentiated Section Styles */
+.category-section {
+    margin-bottom: 80px;
+}
+
+.category-header {
+    color: #b542ff;
+    border-bottom: 2px solid #b542ff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Track Row Layout (Like your reference image) */
+.track-row {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #1a1a1a;
+    transition: background 0.2s;
+}
+.track-row:hover {
+    background: #121212;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid 44;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+.track-info {
+    flex-grow: 1;
+}
+
+.track-title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.track-sub {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Waveform Placeholder */
+.waveform-box {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    margin: 0 30px;
+}
+.wave-bar {
+    background: #fff;
+    width: 4px;
+    border-radius: 2px;
+}
+
+.download-link {
+    color: #b542ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Container for the search */
+.search-section {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.search-section h1 {
+    color: #b542ff;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+}
+
+/* The actual Input Styling */
+#sound-search {
+    width: 100%;
+    padding: 15px 25px;
+    background: #161616;
+    border: 2px solid #222;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Focus State (what happens when you click it) */
+#sound-search:focus {
+    border-color: #b542ff;
+    box-shadow: 0 0 15px rgba(181, 66, 255, 0.2);
+    background: #1a1a1a;
+}
+
+/* Placeholder Styling */
+#sound-search::placeholder {
+    color: #555;
+}
