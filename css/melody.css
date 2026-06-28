@@ -1,6 +1,6 @@
 body {
-    background-image: url('../images/melody-background.jpg');
-    background-size: cover;          /* Makes the image fill the screen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85   )), url('../images/melody-background.jpg');
+    background-size: cover;            /* Makes the image fill the screen */
     background-position: center;     /* Keeps the focus of the image centered */
     background-repeat: no-repeat;
     background-attachment: fixed;    /* Keeps the image static while you scroll */
@@ -14,7 +14,6 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* The 0.7 makes it 70% dark */
     z-index: -1; /* Keeps the overlay behind the content */
 }
 .library-content {
