@@ -1,5 +1,3 @@
-/* HOME PAGE SPECIFIC STYLING */
-
 /* Overrides the general body to add the custom background image */
 body {
     background-image: linear-gradient(rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 0.5)), url('../images/home-page-background.jpg');
