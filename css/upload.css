@@ -1,0 +1,53 @@
+/* Container holding the whole form */
+.upload-container {
+    background-color: #121212;
+    border: 1px solid #222;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Drag and Drop Zone */
+.drop-zone {
+    border: 2px dashed #444;
+    background-color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+.drop-zone.dragover {
+    border-color: #b542ff;
+    background-color: rgba(181, 66, 255, 0.05);
+}
+
+/* Custom Buttons */
+.custom-btn {
+    background-color: #b542ff;
+    color: white;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.custom-btn:hover {
+    background-color: #9a2ce0;
+    color: white;
+}
+
+.custom-btn:disabled {
+    background-color: #444;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Custom Form Inputs */
+.custom-input {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+}
+
+.custom-input:focus {
+    border-color: #b542ff !important;
+    box-shadow: 0 0 10px rgba(181, 66, 255, 0.2) !important;
+}
+
+.custom-input::placeholder {
+    color: #666 !important;
+}
