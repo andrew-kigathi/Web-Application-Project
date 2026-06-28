@@ -1,7 +1,3 @@
-// ==========================================
-// GENERAL.JS - Global Navigation & Setup
-// ==========================================
-
 document.addEventListener("DOMContentLoaded", () => {
     // Select the navigation elements
     const userGreeting = document.getElementById("user-greeting");
@@ -21,5 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if (loginLink) loginLink.classList.add("hidden");       // Hide Login
         if (registerLink) registerLink.classList.add("hidden"); // Hide Register
         if (logoutLink) logoutLink.classList.remove("hidden");  // Show Logout
+    }
+
+    // CONFIRMATION POP-UP FOR LOGOUT
+    if (logoutLink) {
+        logoutLink.addEventListener('click', (e) => {
+            const userConfirmed = confirm("Are you sure you want to log out?");
+            
+            // If they click Cancel, stop them from going to logout.html
+            if (!userConfirmed) {
+                e.preventDefault();
+            }
+        });
     }
 });
