@@ -1,7 +1,3 @@
-// ==========================================================
-// TRACKS.JS - Real-Time Search, Carousels & Dynamic Player Engine
-// ==========================================================
-
 document.addEventListener("DOMContentLoaded", () => {
     
     // --- 1. Real-Time Search Filtering ---

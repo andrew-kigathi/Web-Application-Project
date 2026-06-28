@@ -130,12 +130,19 @@ document.addEventListener('click', function(e) {
     const downloadLink = e.target.closest('.download-link');
     
     if (downloadLink) {
-        e.preventDefault(); // Stop the browser from opening the file in a new tab
+        e.preventDefault();
+        
+        // Find the parent row to extract the display title
+        const trackRow = downloadLink.closest('.track-row');
+        const trackTitle = trackRow.querySelector('.track-title').textContent.trim();
         
         const fileUrl = downloadLink.getAttribute('href');
-        const fileName = fileUrl.split('/').pop(); // Gets the filename (e.g., 'rap-1.wav')
         
-        // Fetch the file and force the browser to download it
+        // Extract the file extension (e.g., 'wav')
+        const extension = fileUrl.split('.').pop();
+        const fileName = `${trackTitle}.${extension}`;
+        
+        // Fetch the file and force the download with the new name
         fetch(fileUrl)
             .then(response => response.blob())
             .then(blob => {
@@ -143,7 +150,7 @@ document.addEventListener('click', function(e) {
                 const tempLink = document.createElement('a');
                 tempLink.style.display = 'none';
                 tempLink.href = blobUrl;
-                tempLink.download = fileName; // This is what triggers the "Save" dialog
+                tempLink.download = fileName;
                 
                 document.body.appendChild(tempLink);
                 tempLink.click();
@@ -152,7 +159,6 @@ document.addEventListener('click', function(e) {
                 tempLink.remove();
             })
             .catch(error => {
-                // Fallback: If you are running this locally without a server, fetch might fail
                 console.error("Fetch failed, opening in new tab instead.", error);
                 window.open(fileUrl, '_blank');
             });
